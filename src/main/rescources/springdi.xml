@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 基于构造函数注入和基于设值函数注入中的 Beans.xml 文件的区别 在基于构造函数注入中，我们使用的是〈bean〉标签中的〈constructor-arg〉元素，-->
+    <!--  而在基于设值函数的注入中，我们使用的是〈bean〉标签中的〈property〉元素。-->
+
+    <!--  第二个你需要注意的点是，如果你要把一个引用传递给一个对象，那么你需要使用 标签的 ref 属性，而如果你要直接传递一个值，那么你应该使用 value 属性。 -->
+
+    <!-- 基于构造函数的配置 依赖注入 -->
+   <!-- <bean id="guozhi" class="com.atzj.springDI.Guozhi">
+        <constructor-arg ref="zhazhi"/>
+    </bean>-->
+
+    <!-- 基于setter 注入 -->
+   <!-- <bean id="guozhi" class="com.atzj.springDI.Guozhi">
+        <property name="zhazhi" ref="zhazhi"/>
+    </bean> -->
+
+    <!--<bean id="zhazhi" class="com.atzj.springDI.Zhazhi">
+    </bean>
+    -->
+
+    <!-- 内部 bean 为基于 setter 注入进行配置的配置文件 与上面的类似扎 去除了ref -->
+    <bean id="guozhi" class="com.atzj.springDI.Guozhi">
+        <property name="zhazhi">
+            <bean id="zhazhi" class="com.atzj.springDI.Zhazhi"></bean>
+        </property>
+    </bean>
+</beans>

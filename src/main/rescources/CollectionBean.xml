@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 注入集合 -->
+    <bean id="collection" class="com.atzj.springDI.CollectionDi">
+        <property name="addressList">
+            <list>
+                <value>CHINA</value>
+                <value>Beijing</value>
+                <value>Anhui</value>
+            </list>
+        </property>
+        <property name="addressSet">
+            <set>
+                <value>中国</value>
+                <value>北京</value>
+            </set>
+        </property>
+        <property name="addressMap">
+            <map>
+                <entry key="one" value="hefei" />
+                <entry key="two" value="wuhu"/>
+                <entry key="three" value="tongling"/>
+            </map>
+        </property>
+        <property name="addressProps">
+            <props>
+                <prop key="o">tiananmen</prop>
+                <prop key="n">gugong</prop>
+                <prop key="e">yiheyuan</prop>
+                <prop key="r">sanlitun</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- 注入null -->
+<!--    <property name="email"><null/></property>-->
+
+    <!-- 注入空值 -->
+   <!-- <property name="email"><null/></property>-->
+
+</beans>
