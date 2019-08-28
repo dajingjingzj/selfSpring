@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--可以创建一个 Bean 定义模板，不需要花太多功夫它就可以被其他子 bean 定义使用。在定义一个 Bean 定义模板时，你不应该指定类的属性，而应该指定带 true 值的抽象属性 -->
+    <!-- 这个时候父bean定义不可以被实例化 一种父bean定义模板 -->
+  <!--  <bean id="hello" abstract="true">
+        <property name="message1" value="China中国"/>
+        <property name="message2" value="Beijing"/>
+    </bean>-->
+
+   <bean id="hello" class="com.atzj.springIoc.Hello">
+       <property name="message1" value="China中国"/>
+       <property name="message2" value="Beijing"/>
+   </bean>
+
+    <bean id="helloChina" class="com.atzj.springIoc.HelloChina" parent="hello">
+        <property name="message1" value="China Beijing"/>
+        <property name="message3" value="Anhui安徽"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <!--default-init-method="init"  default-destroy-method="destory" 太多相同名称的bean注册销毁 使用框架中的批量 放在beans配置里面的 -->
+
+
+
+    <!-- 单个bean的初始化以及关闭 -->
+    <bean id="helloworld" class="com.atzj.springIoc.Helloworld" init-method="init" destroy-method="destory" >
+        <property name="message" value="嘿 bro !" />
+    </bean>
+
+    <bean class="com.atzj.springIoc.BeanHouzhi"/>
+</beans>

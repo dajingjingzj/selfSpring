@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context-3.0.xsd ">
+
+    <!-- 开启注解方式 装配 -->
+    <context:annotation-config />
+
+
+    <!--@Required 注释应用于 bean 属性的 setter 方法，它表明受影响的 bean 属性在配置时必须放在 XML 配置文件中，否则容器就会抛出一个 BeanInitializationException 异常-->
+    <bean id="student" class="com.atzj.springZhujie.Student">
+        <property name="name"  value="Zara" />
+        <property name="age"  value="11"/>
+    </bean>
+
+    <!-- 方法中的@Autowired  当 Spring遇到一个在 setter 方法中使用的 @Autowired 注释，它会在方法中视图执行 byType 自动连接-->
+    <bean id="textEditor" class="com.atzj.springZhujie.TextEditor2">
+    </bean>
+    <bean id="SpellChecker" class="com.atzj.springZhujie.SpellChecker">
+    </bean>
+</beans>
